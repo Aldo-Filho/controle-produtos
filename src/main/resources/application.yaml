@@ -1,3 +1,24 @@
 spring:
   application:
     name: controle-produtos
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/products
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false #Evita que o JPA realize consultas ao subir o servidor
+    hibernate:
+      ddl-auto: validate #Faz com que o hibernate não crie as tabelas no banco a partir da entidade java, ele apenas valida se a entidade java corresponde às migrations
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
