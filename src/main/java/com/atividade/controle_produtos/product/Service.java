@@ -17,7 +17,7 @@ public class Service {
         if (filter.id() != null) {
             spec = spec.and(
                     (root, query, cb) ->
-                            cb.equal(root.get("category").get("id"), filter.id()));
+                            cb.equal(root.get("id"), filter.id()));
         }
         if (filter.name() != null && !filter.name().isBlank()) {
             spec = spec.and(
